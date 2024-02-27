@@ -1,0 +1,1 @@
+{"version":3,"file":"JobSchedulerPlugin.d.ts","sourceRoot":"","sources":["../src/ionic/JobSchedulerPlugin.ts"],"names":[],"mappings":"AAEA,qBAAa,kBAAkB;IAC7B,MAAM,CAAC,KAAK,CACV,KAAK,EAAE,MAAM,OAAO,CAAC,IAAI,CAAC,EAC1B,OAAO,EAAE,QAAQ,EACjB,OAAO,EAAE;QAAE,iBAAiB,EAAE,MAAM,CAAA;KAAE;CAWzC"}

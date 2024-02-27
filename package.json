@@ -1,0 +1,25 @@
+{
+  "name": "ionic-plugin-jobscheduler",
+  "version": "0.0.1",
+  "description": "Ionic 3.x plugin for Android JobScheduler",
+  "main": "build/JobSchedulerPlugin.js",
+  "types": "build/JobSchedulerPlugin.d.ts",
+  "typings": "build/JobSchedulerPlugin.d.ts",
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "postinstall": "npm run build"
+  },
+  "keywords": [
+    "android",
+    "ionic",
+    "cordova",
+    "jobscheduler"
+  ],
+  "author": "Igor Costa",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/irsolu/ionic-plugin-scheduler#readme",
+  "dependencies": {
+    "typescript": "3.6.4"
+  }
+}

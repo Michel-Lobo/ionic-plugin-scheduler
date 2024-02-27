@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="ionic-plugin-jobscheduler" version="0.0.1">
+  <name>JobSchedulerPlugin</name>
+  <description>Ionic Plugin Job Scheduler</description>
+  <license>MIT</license>
+  <repo>https://bitbucket.com/irsolu/ionic-plugin-jobscheduler</repo>
+  <issue>https://bitbucket.com/irsolu/ionic-plugin-jobscheduler/issues</issue>
+  <keywords>ionic,cordova,jobscheduler</keywords>
+
+  <engines>
+    <engine name="cordova" version=">=6.0.0" />
+  </engines>
+
+  <js-module src="www/JobSchedulerPlugin.js" name="JobSchedulerPlugin">
+    <clobbers target="JobSchedulerPlugin" />
+  </js-module>
+
+  <platform name="android">
+    <source-file src="src/android/CDVJobSchedulerPlugin.java" target-dir="src/br/com/irsolu/jobscheduler" />
+    <source-file src="src/android/JobSchedulerPlugin.java" target-dir="src/br/com/irsolu/jobscheduler" />
+    <source-file src="src/android/JobSchedulerPluginConfig.java" target-dir="src/br/com/irsolu/jobscheduler" />
+    <source-file src="src/android/FetchJobService.java" target-dir="src/br/com/irsolu/scheduler" />
+
+    <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="JobSchedulerPlugin">
+        <param name="android-package" value="br.com.irsolu.jobscheduler.CDVJobSchedulerPlugin" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <service android:name="br.com.irsolu.jobscheduler.FetchJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="true" />
+    </config-file>
+  </platform>
+</plugin>
